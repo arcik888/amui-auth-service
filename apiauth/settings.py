@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -96,8 +97,12 @@ WSGI_APPLICATION = 'apiauth.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ['AUTH_DBNAME'],
+        'USER': os.environ['AUTH_DBUSERNAME'],
+        'PASSWORD':  os.environ['AUTH_DBPASSWORD'],
+        'HOST': os.environ['AUTH_DBHOST'],
+        'PORT': os.environ['AUTH_DBPORT'],
     }
 }
 

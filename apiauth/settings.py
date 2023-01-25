@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'apiauth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ['AUTH_DBNAME'],
-        'USER': os.environ['AUTH_DBUSERNAME'],
-        'PASSWORD':  os.environ['AUTH_DBPASSWORD'],
-        'HOST': os.environ['AUTH_DBHOST'],
-        'PORT': os.environ['AUTH_DBPORT'],
+        'NAME': os.getenv('AUTH_DBNAME'),
+        'USER': os.getenv('AUTH_DBUSERNAME'),
+        'PASSWORD':  os.getenv('AUTH_DBPASSWORD'),
+        'HOST': os.getenv('AUTH_DBHOST'),
+        'PORT': os.getenv('AUTH_DBPORT'),
     }
 }
 

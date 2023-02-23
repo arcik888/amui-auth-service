@@ -5,6 +5,9 @@ ENV AUTH_DBUSERNAME=svcauth
 ENV AUTH_DBPASSWORD=Pa$$w0rd
 ENV AUTH_DBHOST=192.168.88.193
 ENV AUTH_DBPORT=5432
+ENV DJANGO_SUPERUSER_USERNAME=admin
+ENV DJANGO_SUPERUSER_PASSWORD=mysecret
+ENV DJANGO_SUPERUSER_EMAIL=arcik888@gmail.com
 
 WORKDIR /app
 
@@ -12,6 +15,8 @@ COPY . /app/
 
 RUN pip install -r /app/requirements.txt
 
-EXPOSE 8000
+RUN python /app/manage.py migrate
+
+RUN python /app/manage.py createsuperuser --no-input
 
 CMD exec gunicorn apiauth.wsgi:application --bind 0.0.0.0:8000 --workers 2

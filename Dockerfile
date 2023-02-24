@@ -15,7 +15,7 @@ COPY . /app/
 
 RUN pip install -r /app/requirements.txt
 
-RUN python /app/manage.py migrate --database=auth
+RUN python /app/manage.py migrate --database=default
 
 RUN python /app/manage.py createsuperuser --no-input
 

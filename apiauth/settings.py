@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-el+09v2!g&y$2sy@x3tij0g3jb029e)u(hle)^4mgb(ngl@j-s
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.getenv('AUTH_APP'),
+    os.getenv('HOST_AUTH_APP'),
     '192.168.88.219',
     ]
 
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    os.getenv('AUTH_APP'),
+    os.getenv('CORS_AUTH_APP'),
     '192.168.88.219',
 ]
 

@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     os.getenv('AUTH_APP'),
+    '192.168.88.219',
     ]
 
 
@@ -60,6 +61,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     os.getenv('AUTH_APP'),
+    '192.168.88.219',
 ]
 
 ROOT_URLCONF = 'apiauth.urls'

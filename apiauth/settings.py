@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-el+09v2!g&y$2sy@x3tij0g3jb029e)u(hle)^4mgb(ngl@j-s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    os.getenv('AUTH_APP'),
+    ]
 
 
 # Application definition
@@ -57,8 +59,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200",
-    "http://127.0.0.1:4200",
+    os.getenv('AUTH_APP'),
 ]
 
 ROOT_URLCONF = 'apiauth.urls'

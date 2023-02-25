@@ -61,7 +61,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     os.getenv('CORS_AUTH_APP'),
-    '192.168.88.219',
+    'http://192.168.88.219',
 ]
 
 ROOT_URLCONF = 'apiauth.urls'

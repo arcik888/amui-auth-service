@@ -26,10 +26,7 @@ SECRET_KEY = 'django-insecure-el+09v2!g&y$2sy@x3tij0g3jb029e)u(hle)^4mgb(ngl@j-s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    os.getenv('HOST_AUTH_APP'),
-    '192.168.88.219',
-    ]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,10 +56,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    os.getenv('CORS_AUTH_APP'),
-    'http://192.168.88.219',
-]
+#CORS_ALLOWED_ORIGINS = []
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'apiauth.urls'
 

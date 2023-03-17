@@ -19,6 +19,6 @@ RUN pip install -r /app/requirements.txt
 
 RUN python /app/manage.py migrate --database=default
 
-RUN python /app/manage.py createsuperuser --no-input
+# RUN python /app/manage.py createsuperuser --no-input
 
 CMD exec gunicorn apiauth.wsgi:application --bind 0.0.0.0:8000 --workers 2

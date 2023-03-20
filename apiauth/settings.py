@@ -57,7 +57,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = allowed_hosts
+CORS_ALLOWED_ORIGINS = [
+    'https://localhost:4200',
+    'http://localhost:4200',
+    'https://192.168.88.196:4200',
+    'http://192.168.88.196:4200',
+    'https://192.168.88.198:4200',
+    'http://192.168.88.198:4200',
+    'https://localhost:4201',
+    'http://localhost:4201',
+    'https://192.168.88.196:4201',
+    'http://192.168.88.196:4201',
+    'https://192.168.88.198:4201',
+    'http://192.168.88.198:4201',
+]
 
 ROOT_URLCONF = 'apiauth.urls'
 

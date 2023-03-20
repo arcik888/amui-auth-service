@@ -72,6 +72,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://192.168.88.198:4201',
 ]
 
+CORS_ALLOW_HEADERS = [
+    'token',
+    'content-type',
+    'Access-Control-Allow-Origin',
+]
+
 ROOT_URLCONF = 'apiauth.urls'
 
 REST_FRAMEWORK = {

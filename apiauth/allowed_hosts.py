@@ -1,5 +1,7 @@
 
-allowed_hosts = [
+cors_allowed_hosts = [
+    'http://192.168.88.219:4200',
+    'http://192.168.88.219:4201',
     'https://localhost:4200',
     'http://localhost:4200',
     'https://192.168.88.196:4200',
@@ -12,5 +14,4 @@ allowed_hosts = [
     'http://192.168.88.196:4201',
     'https://192.168.88.198:4201',
     'http://192.168.88.198:4201',
-
 ]

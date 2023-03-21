@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-from .allowed_hosts import allowed_hosts
+from .allowed_hosts import cors_allowed_hosts
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -57,26 +57,20 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'https://localhost:4200',
-    'http://localhost:4200',
-    'https://192.168.88.196:4200',
-    'http://192.168.88.196:4200',
-    'https://192.168.88.198:4200',
-    'http://192.168.88.198:4200',
-    'https://localhost:4201',
-    'http://localhost:4201',
-    'https://192.168.88.196:4201',
-    'http://192.168.88.196:4201',
-    'https://192.168.88.198:4201',
-    'http://192.168.88.198:4201',
-]
+#CORS_ALLOWED_ORIGINS = cors_allowed_hosts
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_HEADERS = [
     'token',
     'content-type',
-    'Access-Control-Allow-Origin',
 ]
+
+CORS_ALLOW_METHODS = [
+    # 'GET',
+    'POST'
+]
+
 
 ROOT_URLCONF = 'apiauth.urls'
 
